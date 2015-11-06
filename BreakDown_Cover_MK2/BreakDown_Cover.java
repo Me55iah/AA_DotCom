@@ -280,27 +280,27 @@ public class BreakDown_Cover extends BreakDown_CoverHelper
 		if (sBreakDownCover.equalsIgnoreCase("Vehicle") && (text_vehReg().exists())){
 		//if (text_vehReg().exists()){
 		
-			try {
-				text_vehReg().waitForExistence(5,  0.25);
-				//text_vehReg(ANY, READY).click();
-			} catch (ObjectNotFoundException e) {
-				text_vehReg2().waitForExistence(5,  0.25);
-				//text_vehReg2(ANY, READY).click();
-			}
+//			try {
+//				text_vehReg().waitForExistence(5,  0.25);
+//				//text_vehReg(ANY, READY).click();
+//			} catch (ObjectNotFoundException e) {
+//				text_vehReg2().waitForExistence(5,  0.25);
+//				//text_vehReg2(ANY, READY).click();
+//			}
 			//--------------------------------------------------------------------
 			// Input Registration
 			iE(document_ukBreakdownCoverViewA(),DEFAULT_FLAGS).inputChars(sRegNumber);
 			iE(document_ukBreakdownCoverViewA(),DEFAULT_FLAGS).inputKeys("{ENTER}");
 			//--------------------------------------------------------------------				
-			// SUbmit Registration
-			//link_addAVehicle().click();
-			try {
-				button_updateYourQuotesubmit().waitForExistence(5,  0.25);
-				//button_updateYourQuotesubmit(ANY, READY).click();
-			} catch (ObjectNotFoundException e) {
-				button_updateCoversubmit().waitForExistence(5,  0.25);
-				//button_updateCoversubmit(ANY, READY).click();
-			}			
+//			// SUbmit Registration
+//			//link_addAVehicle().click();
+//			try {
+//				button_updateYourQuotesubmit().waitForExistence(5,  0.25);
+//				//button_updateYourQuotesubmit(ANY, READY).click();
+//			} catch (ObjectNotFoundException e) {
+//				button_updateCoversubmit().waitForExistence(5,  0.25);
+//				//button_updateCoversubmit(ANY, READY).click();
+//			}			
 			//--------------------------------------------------------------------
 			BrowserSync();
 			//--------------------------------------------------------------------
@@ -317,8 +317,8 @@ public class BreakDown_Cover extends BreakDown_CoverHelper
 	 		
 			//--------------------------------------------------------------------
 			// Submit - Second Submit, As Registration popup Triggered By The First Action
-			button_continuesubmit().waitForExistence(10,  0.25);
-			button_continuesubmit(ANY, READY).click();
+//			button_continuesubmit().waitForExistence(10,  0.25);
+//			button_continuesubmit(ANY, READY).click();
 			//--------------------------------------------------------------------
 
 		}
@@ -342,7 +342,13 @@ public class BreakDown_Cover extends BreakDown_CoverHelper
 		}
 		//button_updateYourQuotesubmit().waitForExistence(10,  0.25);
 		//button_updateYourQuotesubmit(ANY, READY).click();
-		 
+		try {
+			button_continuesubmit().waitForExistence(10,  0.25);
+			button_continuesubmit(ANY, READY).click();
+		} catch (ObjectNotFoundException e) {
+
+		}
+
 		
 		// Grab Cost And Lock It In Commons
 		//--------------------------------------------------------------------
